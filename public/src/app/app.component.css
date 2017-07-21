@@ -1,0 +1,26 @@
+#main {
+	padding: 20px;
+	margin: 20px;
+	border: 3px solid black;
+}
+
+form {
+	border: 1px solid black;
+	padding: 20px;
+}
+
+span {
+	color: red;
+}
+
+input {
+	width: 70px;
+	background-color: green;
+	color: white;
+	padding: 5px;
+	vertical-align: middle;
+}
+
+textarea {
+	vertical-align: middle;
+}

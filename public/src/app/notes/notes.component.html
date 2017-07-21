@@ -1,0 +1,4 @@
+<div *ngFor="let note of allNotes">
+	<p>{{ note.createdAt | date: 'medium' }}</p>
+	<h3>{{ note.content }}</h3>
+</div>

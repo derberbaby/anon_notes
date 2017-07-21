@@ -1,0 +1,26 @@
+<div id="main">
+  <h1>{{ title }}</h1>
+<div *ngIf="errors">
+  <p *ngFor="let e of errors" class="error">{{e}}</p>
+  <!-- {{errors}} -->
+</div>
+  <form (submit)="createNote(); formData.reset()" #formData="ngForm">
+    <p *ngIf="newNote.touched">
+    <span *ngIf="newNote.errors?.required">Note is required</span>
+    <span *ngIf="newNote.errors?.minlength">Must be at least 3 characters.</span>
+    </p>
+    <label for="note">Note: 
+    <textarea
+    rows="2"
+    cols="80"
+    name="note"
+    required 
+    minlength="3"
+    [(ngModel)]="note.content"
+    #newNote = "ngModel">
+    </textarea></label>
+    <input type="submit" [disabled]="!formData.valid" value="Add Note">
+  </form>
+
+  <app-notes [allNotes]='notes'></app-notes>
+</div>
